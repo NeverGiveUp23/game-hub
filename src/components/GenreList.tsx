@@ -7,13 +7,17 @@ import GenreCardContainer from './GenreCardContainer';
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({onSelectGenre}: Props) => {
+const GenreList = ({selectedGenre, onSelectGenre}: Props) => {
   const {data, isLoading, error} = useGenres();
   const skeletons: number[] = [1,2,3,4,5,6];
 
-if(error) return null;
+  if(error) return null;
+
+
+
 
 
   return (
@@ -33,6 +37,7 @@ if(error) return null;
               src={croppedImagesUrl(g.image_background)}
             />
             <Button
+            fontWeight={g.id === selectedGenre?.id ? "bold" : "normal"}
               onClick={() => onSelectGenre(g)}
               fontSize={"lg"}
               variant={"link"}
