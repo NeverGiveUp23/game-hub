@@ -1,24 +1,16 @@
 
-import { Button, HStack, Heading, Image, List, ListItem, Spinner, Text } from '@chakra-ui/react';
+import { Button, HStack, Heading, Image, List, ListItem } from '@chakra-ui/react';
 import useGenres, { Genre } from '../hooks/useGenres';
 import croppedImagesUrl from '../services/image-url';
-import GenreCardSkeleton from './GenreCardSkeleton';
-import GenreCardContainer from './GenreCardContainer';
-
 interface Props {
   onSelectGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
 }
 
 const GenreList = ({selectedGenre, onSelectGenre}: Props) => {
-  const {data, isLoading, error} = useGenres();
-  const skeletons: number[] = [1,2,3,4,5,6];
+  const {data, error} = useGenres();
 
   if(error) return null;
-
-
-
-
 
   return (
     <>
