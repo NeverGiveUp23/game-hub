@@ -24,12 +24,12 @@ const GenreList = ({selectedGenre, onSelectGenre}: Props) => {
     <>
     <Heading fontSize={'2xl'} marginBottom={3}>Genres</Heading>
       <List>
-        {isLoading &&
+        {/* {isLoading &&
           skeletons.map((skeleton) => (
             <GenreCardContainer key={skeleton}>
               <GenreCardSkeleton />
             </GenreCardContainer>
-          ))}
+          ))} */}
         {data.map((g) => (
           <ListItem key={g.id} paddingY={"5px"}>
             <HStack>
