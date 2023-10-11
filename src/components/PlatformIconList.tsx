@@ -26,7 +26,7 @@ const iconMap: { [key: string]: IconType } = { // index signature
   return (
     <HStack marginY={3}>
       {platforms.map((platform) => (
-        <Icon as={iconMap[platform.slug]} color={'gray.500'}/>
+        <Icon key={platform.id} as={iconMap[platform.slug]} color={'gray.500'}/>
       ))}
     </HStack>
   );
