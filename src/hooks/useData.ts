@@ -1,10 +1,11 @@
 import { AxiosRequestConfig, CanceledError } from "axios";
 import { useState, useEffect } from "react";
 import apiClient from "../services/api-client";
+import { useQuery } from "@tanstack/react-query";
 
 
 
-interface FetchResponse<T> {
+export interface FetchResponse<T> {
   count: number;
   results: T[]
 }
@@ -14,6 +15,10 @@ const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
 const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState('');
+  // useQuery({
+  //   queryKey: ['game'],
+  //   queryFn: () => 
+  // })
 
 
   useEffect(() => {

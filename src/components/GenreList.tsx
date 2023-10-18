@@ -22,7 +22,7 @@ const GenreList = ({selectedGenre, onSelectGenre}: Props) => {
               <GenreCardSkeleton />
             </GenreCardContainer>
           ))} */}
-        {data.map((g) => (
+        {data?.results.map((g) => (
           <ListItem key={g.id} paddingY={"5px"}>
             <HStack>
               <Image
