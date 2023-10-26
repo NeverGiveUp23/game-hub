@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { FetchResponse } from "../services/api-client";
 import apiClient from "../services/api-client";
 import { fullDay } from "./useGenres";
-import genres from "../data/genres";
 import platforms from "../data/platforms";
 
 interface Platform {
