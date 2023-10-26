@@ -3,12 +3,8 @@ import { GameQuery } from '../App';
 import { useQuery } from "@tanstack/react-query";
 import apiClient from "../services/api-client";
 import { fullDay } from "./useGenres";
+import { Platform } from './usePlatforms';
 
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
 
 export interface Game {
   id: number;
