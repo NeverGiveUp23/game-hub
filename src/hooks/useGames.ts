@@ -1,5 +1,5 @@
 import { GameQuery } from '../App';
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { fullDay } from "./useGenres";
 import { Platform } from './usePlatforms';
 import apiClient, {FetchResponse} from '../services/api-client';
