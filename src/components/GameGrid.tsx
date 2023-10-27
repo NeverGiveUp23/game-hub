@@ -28,7 +28,7 @@ const GameGrid = ({ gameQuery }: Props) => {
 
   if(error) return <Text>{error.message}</Text>
   return (
-    <Box padding={10}>
+    <Box padding={10}> // moved padding to main frangment (Box)
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         spacing={6}
@@ -40,7 +40,7 @@ const GameGrid = ({ gameQuery }: Props) => {
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
-        {data?.pages.map((page, index) => (
+        {data?.pages.map((page, index) => ( // implement pages from the GameQuery prop to load more games 
           <React.Fragment key={index}>
             {page.results.map((game) => (
               <GameCardContainer key={game.id}>
@@ -50,6 +50,7 @@ const GameGrid = ({ gameQuery }: Props) => {
           </React.Fragment>
         ))}
       </SimpleGrid>
+      // Have the buuton to load more 
       {hasNextPage && (
       <Button marginY={3} onClick={() => fetchNextPage()}>
         {isFetchingNextPage ? "Loading..." : "Load More"}
