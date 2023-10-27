@@ -4,17 +4,19 @@ import useGenres, { Genre } from '../hooks/useGenres';
 import croppedImagesUrl from '../services/image-url';
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({selectedGenre, onSelectGenre}: Props) => {
-  const {data, error} = useGenres();
+const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
+  const { data, error } = useGenres();
 
-  if(error) return null;
+  if (error) return null;
 
   return (
     <>
-    <Heading fontSize={'2xl'} marginBottom={3}>Genres</Heading>
+      <Heading fontSize={"2xl"} marginBottom={3}>
+        Genres
+      </Heading>
       <List>
         {/* {isLoading &&
           skeletons.map((skeleton) => (
@@ -34,7 +36,7 @@ const GenreList = ({selectedGenre, onSelectGenre}: Props) => {
               <Button
                 textAlign={"left"}
                 whiteSpace={"normal"}
-                fontWeight={g.id === selectedGenre?.id ? "bold" : "normal"}
+                fontWeight={g.id === selectedGenreId? "bold" : "normal"}
                 onClick={() => onSelectGenre(g)}
                 fontSize={"lg"}
                 variant={"link"}
@@ -48,6 +50,6 @@ const GenreList = ({selectedGenre, onSelectGenre}: Props) => {
       </List>
     </>
   );
-}
+};
 
 export default GenreList
