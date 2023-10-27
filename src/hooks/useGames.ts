@@ -16,6 +16,7 @@ export interface Game {
   rating_top: number;
 }
 
+
 const useGames = (gameQuery: GameQuery) =>
   useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: ["games", gameQuery],

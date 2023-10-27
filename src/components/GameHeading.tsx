@@ -7,7 +7,8 @@ interface Props {
   gameQuery: GameQuery;
 }
 
- 
+
+
 
 
 const GameHeading = ({ gameQuery }: Props) => {

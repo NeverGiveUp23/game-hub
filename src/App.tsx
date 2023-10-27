@@ -16,6 +16,7 @@ export interface GameQuery {
   searchText: string;
 }
 
+
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({  } as GameQuery);
   return (

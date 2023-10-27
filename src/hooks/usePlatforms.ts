@@ -13,6 +13,7 @@ name: string;
 slug: string;
 }
 
+
 const usePlatforms = () =>
   useQuery({
     queryKey: ["platforms"],

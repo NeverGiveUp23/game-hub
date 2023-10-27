@@ -13,6 +13,7 @@ interface Props {
 }
 
 
+
 const GameGrid = ({ gameQuery }: Props) => {
   // cleanign by making custom hook
 
